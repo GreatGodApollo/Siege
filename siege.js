@@ -5,6 +5,8 @@ const ddiff = require('return-deep-diff');
 const moment = require('moment'); 
 require('moment-timezone'); 
 
+console.log(args[0])
+
 client.on('ready',() => {
    console.log("I'm Online\nkys");
 })
