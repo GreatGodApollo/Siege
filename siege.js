@@ -143,17 +143,40 @@ client.on('message', message => {
   } else
 
   if (command === 'embed') {
-      if (!["1752220", "3066993", "3447003", "10181046", "15844367", "15105570", "15158332", "9807270", "8359053", "3426654", "1146986", "2067276", "2123412", "7419530", "12745742", "11027200", "10038562", "9936031", "12370112", "2899536"].includes(args[0])) {
-          message.channel.send('Please enter the command in the correct format. You enter it like this:\n``<embed color words``\nFor example, this command would do this. ``<embed 15844367 Hello there!``');
-          message.channel.send("", {embed: {
-          color: 15844367,
-          description: `Hello there!`
-          }});
-      } else
+	message.delete(0);
+    if(!["default", "aqua", "green", "blue", "purple", "gold", "orange", "red", "grey", "darker_grey", "navy", "dark_aqua", "dark_green", "dark_blue", "dark_purple", "dark_gold", "dark_orange", "dark_red", "dark_grey", "light_grey", "dark_navy"].includes(args[0])) {
+        // Give example
+    } else {
+        let a = args[0];
+		let color = 0;
+		args.shift();
+        if (a === "default") color = 0;
+        if (a === "aqua") color = 1752220;
+        if (a === "green") color = 3066993;
+        if (a === "blue") color = 3447003;
+        if (a === "purple") color = 10181046;
+        if (a === "gold") color = 15844367;
+        if (a === "orange") color = 15105570;
+        if (a === "red") color = 15158332;
+        if (a === "grey") color = 9807270;
+        if (a === "darker_grey") color = 8359053;
+        if (a === "navy") color = 3426654;
+        if (a === "dark_aqua") color = 1146986;
+        if (a === "dark_green") color = 2067276;
+        if (a === "dark_blue") color = 2123412;
+        if (a === "dark_purple") color = 7419530;
+        if (a === "dark_gold") color = 12745742;
+        if (a === "dark_orange") color = 11027200;
+        if (a === "dark_red") color = 10038562;
+        if (a === "dark_grey") color = 9936031;
+        if (a === "dark_navy") color = 2899536;
+        if (a === "light_grey") color = 12370112;
+
         message.channel.send("", {embed: {
-    color: args.shift(),
-    description: `${args.join(" ")}`
-    }});
+            color: color,
+            description: `${args.join(" ")}`
+        }});
+    }
   } else
 
   if (command === 'embed-colors') {
