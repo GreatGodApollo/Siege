@@ -13,13 +13,14 @@ var prefix = settings.prefix
 
 client.on('message', message => {
     if (!message.content.startsWith(prefix)) return;
+    if (message.author.bot) return;
+    if (message.channel.id !== '310557390346911744') return message.channel.send(`Sorry, commands are not accepted in **${message.channel.name}**.`);
     let command = message.content.split(" ")[0];
     command = command.slice(settings.prefix.length);
     command = command.toLowerCase();
     let args = message.content.split(' ').slice(1);
     let result = args.slice(1).join(' ');
     console.log('I saw that');
-    if (message.author.bot) return;
 
     if (command === 'purge') {
         let messagecount = parseInt(result);
@@ -182,7 +183,7 @@ client.on('message', message => {
       message.channel.sendCode("", "-DEFAULT: 0\nAQUA: 1752220\nGREEN: 3066993\nBLUE: 3447003\nPURPLE: 10181046\nGOLD: 15844367\nORANGE: 15105570\nRED: 15158332\nGREY: 9807270\nDARKER_GREY: 8359053\nNAVY: 3426654\nDARK_AQUA: 1146986\nDARK_GREEN: 2067276\nDARK_BLUE: 2123412\nDARK_PURPLE: 7419530\nDARK_GOLD: 12745742\nDARK_ORANGE: 11027200\nDARK_RED: 10038562\nDARK_GREY: 9936031\nLIGHT_GREY: 12370112\nDARK_NAVY: 2899536");
   } else return;
 });
-
+/*
 client.on('message', message => {
     if (message.author.bot) return;
     message.channel.send('', {embed: {
@@ -215,7 +216,7 @@ client.on('message', message => {
   }
     });
 });
-
+*/
 // END OF COMMANDS --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 client.on('message', message => {
