@@ -5,8 +5,6 @@ const ddiff = require('return-deep-diff');
 const moment = require('moment'); 
 require('moment-timezone'); 
 
-console.log(args[0])
-
 client.on('ready',() => {
    console.log("I'm Online\nkys");
 })
@@ -18,8 +16,8 @@ client.on('message', message => {
     let command = message.content.split(" ")[0];
     command = command.slice(settings.prefix.length);
     command = command.toLowerCase();
-    let args = message.content.split(" ").slice(1);
-    var result = args.join(' ');
+    let args = message.content.split(' ').slice(1);
+    let result = args.slice(1).join(' ');
     console.log('I saw that');
     if (message.author.bot) return;
 
@@ -145,13 +143,12 @@ client.on('message', message => {
   } else
 
   if (command === 'embed') {
-	message.delete(0);
     if(!["default", "aqua", "green", "blue", "purple", "gold", "orange", "red", "grey", "darker_grey", "navy", "dark_aqua", "dark_green", "dark_blue", "dark_purple", "dark_gold", "dark_orange", "dark_red", "dark_grey", "light_grey", "dark_navy"].includes(args[0])) {
         // Give example
     } else {
         let a = args[0];
 		let color = 0;
-		args.shift();
+		// UNECESSARY: args.shift();
         if (a === "default") color = 0;
         if (a === "aqua") color = 1752220;
         if (a === "green") color = 3066993;
@@ -176,14 +173,47 @@ client.on('message', message => {
 
         message.channel.send("", {embed: {
             color: color,
-            description: `${args.join(" ")}`
+            description: `${result}`
         }});
     }
   } else
 
   if (command === 'embed-colors') {
-      message.channel.sendCode("", "DEFAULT: 0\nAQUA: 1752220\nGREEN: 3066993\nBLUE: 3447003\nPURPLE: 10181046\nGOLD: 15844367\nORANGE: 15105570\nRED: 15158332\nGREY: 9807270\nDARKER_GREY: 8359053\nNAVY: 3426654\nDARK_AQUA: 1146986\nDARK_GREEN: 2067276\nDARK_BLUE: 2123412\nDARK_PURPLE: 7419530\nDARK_GOLD: 12745742\nDARK_ORANGE: 11027200\nDARK_RED: 10038562\nDARK_GREY: 9936031\nLIGHT_GREY: 12370112\nDARK_NAVY: 2899536");
+      message.channel.sendCode("", "-DEFAULT: 0\nAQUA: 1752220\nGREEN: 3066993\nBLUE: 3447003\nPURPLE: 10181046\nGOLD: 15844367\nORANGE: 15105570\nRED: 15158332\nGREY: 9807270\nDARKER_GREY: 8359053\nNAVY: 3426654\nDARK_AQUA: 1146986\nDARK_GREEN: 2067276\nDARK_BLUE: 2123412\nDARK_PURPLE: 7419530\nDARK_GOLD: 12745742\nDARK_ORANGE: 11027200\nDARK_RED: 10038562\nDARK_GREY: 9936031\nLIGHT_GREY: 12370112\nDARK_NAVY: 2899536");
   } else return;
+});
+
+client.on('message', message => {
+    if (message.author.bot) return;
+    message.channel.send('', {embed: {
+    color: 3447003,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: 'This is an embed',
+    url: 'http://google.com',
+    description: 'This is a test embed to showcase what they look like and what they can do.',
+    fields: [{
+        name: 'Fields',
+        value: 'They can have different fields with small headlines.'
+      },
+      {
+        name: 'Masked links',
+        value: 'You can put [masked links](http://google.com) inside of rich embeds.'
+      },
+      {
+        name: 'Markdown',
+        value: 'You can put all the *usual* **__Markdown__** inside of them.'
+      }
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: '© Example'
+    }
+  }
+    });
 });
 
 // END OF COMMANDS --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
