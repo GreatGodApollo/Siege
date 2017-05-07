@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const settings = require('./settings.json');
 const ddiff = require('return-deep-diff');
 const moment = require('moment'); 
+const eightball = require('8ball')()
 require('moment-timezone'); 
 
 client.on('ready',() => {
@@ -131,10 +132,40 @@ client.on('message', message => {
 
   if (command === 'mc') {
     let members = message.guild.memberCount
-    message.reply(`We currently have ${members} members!`).catch(console.error);
+    message.channel.send('', {embed: {
+    color: 15158332,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: 'MemberCount',
+    url: 'http://thehangout.tk',
+    description: `We currently have ${members} members!`,
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: 'MemberCount Command'
+    }
+  }
+    });
   } else if (command === 'membercount') {
     let members = message.guild.memberCount
-    message.reply(`We currently have ${members} members!`).catch(console.error);
+    message.channel.send('', {embed: {
+    color: 15158332,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: 'MemberCount',
+    url: 'http://thehangout.tk',
+    description: `We currently have ${members} members!`,
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: 'MemberCount Command'
+    }
+  }
+    });
   } else
 
   if (command === 'test') {
@@ -182,7 +213,26 @@ client.on('message', message => {
 
   if (command === 'embed-colors') {
       message.channel.sendCode("", "-DEFAULT: 0\nAQUA: 1752220\nGREEN: 3066993\nBLUE: 3447003\nPURPLE: 10181046\nGOLD: 15844367\nORANGE: 15105570\nRED: 15158332\nGREY: 9807270\nDARKER_GREY: 8359053\nNAVY: 3426654\nDARK_AQUA: 1146986\nDARK_GREEN: 2067276\nDARK_BLUE: 2123412\nDARK_PURPLE: 7419530\nDARK_GOLD: 12745742\nDARK_ORANGE: 11027200\nDARK_RED: 10038562\nDARK_GREY: 9936031\nLIGHT_GREY: 12370112\nDARK_NAVY: 2899536");
-  } else return;
+  } else
+
+  if (command === '8ball') {
+    message.channel.send('', {embed: {
+    color: 15158332,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: '8Ball',
+    url: 'http://thehangout.tk',
+    description: `${eightball}`,
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: '8Ball Command'
+    }
+  }
+    });
+    }
 });
 /*
 client.on('message', message => {
