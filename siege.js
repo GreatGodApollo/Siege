@@ -20,6 +20,7 @@ client.on('message', message => {
     command = command.toLowerCase();
     let args = message.content.split(' ').slice(1);
     let result = args.slice(1).join(' ');
+    let argresult = args.join(' ');
     console.log('I saw that');
 
     if (command === 'purge') {
@@ -38,15 +39,15 @@ client.on('message', message => {
     } else
 
     if (command === 'setstatus') {
-        if (!result) {
+        if (!argresult) {
         message.channel.send('Please say a status. The 4 statuses are ``online | idle | invisible | dnd``').catch(console.error);
-        }
-        if (!result) return;
-        client.user.setStatus(result).catch(console.error);
-        if (result === 'dnd') {
+        return;
+        } else
+        client.user.setStatus(argresult).catch(console.error);
+        if (argresult === 'dnd') {
         message.channel.send(`Status has been set to do not disturb!`).catch(console.error);
         } else
-        message.channel.send(`Status has been set to ${result}!`).catch(console.error);
+        message.channel.send(`Status has been set to ${argresult}!`).catch(console.error);
     } else
 
     if (command === 'ping') {
