@@ -63,18 +63,18 @@ client.on('message', message => {
     } else
     
     if (command === 'setgame') {
-        if (!result) {
+        if (!argresult) {
             message.channel.send('Please say the game you want me to display. Ex: ``/setgame /help | NewGen``').catch(console.error);
             return;
         } else
         
-        if (result === 'end') {
+        if (argresult === 'end') {
             client.user.setGame().catch(console.error);
             message.channel.send(`Game has been reset!`).catch(console.error);
             return;
         } else
-        client.user.setGame(result)
-        message.channel.send(`Game has been set to ${result}!`);
+        client.user.setGame(argresult)
+        message.channel.send(`Game has been set to ${argresult}!`);
     } else
 
     if (command === 'join') {
@@ -104,7 +104,7 @@ client.on('message', message => {
 	} else
 
     if (command === 'roll') {
-    var roll = Math.floor(Math.random() * result) + 1;
+    var roll = Math.floor(Math.random() * argresult) + 1;
     message.reply(`you rolled a ${roll}!`).catch(console.error); 
   } else
 
