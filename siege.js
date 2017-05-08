@@ -19,10 +19,15 @@ client.on('message', message => {
     let command = message.content.split(" ")[0];
     command = command.slice(settings.prefix.length);
     command = command.toLowerCase();
+    var guild = message.guild
     let args = message.content.split(' ').slice(1);
     let result = args.slice(1).join(' ');
     let argresult = args.join(' ');
     console.log('I saw that');
+
+    if (command === 'rcreate') {
+        guild.createRole({name:'rawr xd', color:'00FFFF', mentionable:true});
+    } else
 
     if (command === 'purge') {
         let messagecount = parseInt(result);
@@ -82,7 +87,7 @@ client.on('message', message => {
 		let voiceChan = message.member.voiceChannel;
 		if (!voiceChan || voiceChan.type !== 'voice') {
 			message.channel.send('No').catch(error => console.log(error))
-		} else if (message.guild.voiceConnection) {
+		} else if (guild.voiceConnection) {
 			message.channel.send('I\'m already in a voice channel');
 		} else {
 			message.channel.send('Joining...').then(() => {
@@ -131,7 +136,7 @@ client.on('message', message => {
   } else
 
   if (command === 'mc') {
-    let members = message.guild.memberCount
+    let members = guild.memberCount
     message.channel.send('', {embed: {
     color: 15158332,
     author: {
@@ -149,7 +154,7 @@ client.on('message', message => {
   }
     });
   } else if (command === 'membercount') {
-    let members = message.guild.memberCount
+    let members = guild.memberCount
     message.channel.send('', {embed: {
     color: 15158332,
     author: {
@@ -211,10 +216,6 @@ client.on('message', message => {
     }
   } else
 
-  if (command === 'embed-colors') {
-      message.channel.sendCode("", "-DEFAULT: 0\nAQUA: 1752220\nGREEN: 3066993\nBLUE: 3447003\nPURPLE: 10181046\nGOLD: 15844367\nORANGE: 15105570\nRED: 15158332\nGREY: 9807270\nDARKER_GREY: 8359053\nNAVY: 3426654\nDARK_AQUA: 1146986\nDARK_GREEN: 2067276\nDARK_BLUE: 2123412\nDARK_PURPLE: 7419530\nDARK_GOLD: 12745742\nDARK_ORANGE: 11027200\nDARK_RED: 10038562\nDARK_GREY: 9936031\nLIGHT_GREY: 12370112\nDARK_NAVY: 2899536");
-  } else
-
   if (command === '8ball') {
     message.channel.send('', {embed: {
     color: 15158332,
@@ -232,7 +233,104 @@ client.on('message', message => {
     }
   }
     });
+} else
+
+  if (command === 'sinfo') {
+      message.channel.send('', {embed: {
+    color: 15158332,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    thumbnail: {
+        url: message.guild.iconURL
+    },
+    title: 'Server Info',
+    url: 'http://thehangout.tk',
+    description: `ID: ${message.guild.id}`,
+    fields: [{
+        name: 'Member Count',
+        value: `${message.guild.memberCount} Users | ${message.guild.members.filter(member => member.user.presence.status === 'online', 'idle', 'dnd').size} Online`,
+        inline: true
+      },
+      {
+        name: 'Default Channel',
+        value: `${message.guild.defaultChannel}`,
+        inline: true
+      },
+      {
+        name: 'Owner',
+        value: `${message.guild.owner.user.tag}`,
+        inline: true
+      },
+      {
+        name: 'Channels',
+        value: `${message.guild.channels.filter(ch => ch.type === 'text').size} Text | ${message.guild.channels.filter(ch => ch.type === 'voice').size} Voice`,
+        inline: true
+      },
+      {
+        name: 'Roles',
+        value: `${message.guild.roles.size} Roles`,
+        inline: true
+      },
+      {
+        name: 'Region',
+        value: `${message.guild.region}`,
+        inline: true
+      },
+      {
+        name: 'Created On',
+        value: `Guild was created at ${message.guild.createdAt}`,
+        inline: true
+      }
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: 'ServerInfo Command'
     }
+  }
+    });
+  } else
+
+  if (command === 'server') {
+          message.channel.send('', {embed: {
+    color: 15158332,
+    author: {
+      name: 'h a n g o u t',
+      icon_url: client.guilds.get('294643442066128897').iconURL
+    },
+    thumbnail: {
+        url: 'http://i.imgur.com/4jyWk0a.png'
+    },
+    title: 'Welcome to the h a n g o u t discord server!',
+    url: 'http://thehangout.tk',
+    description: '',
+    fields: [{
+        name: 'Why join h a n g o u t?',
+        value: 'You should join h a n g o u t because not only do we have an awesome staff that can help you with any question you have about the server, but we have a friendly community as well with some **pretty fine** memes. We have a huge selection of channels, including **#memes**, **#info**, **#nsfw**, **#picture_verified** and more! The biggest thing though, is the events!'
+      },
+      {
+        name: 'Events',
+        value: 'There\'s plenty of events that go on in h a n g o u t! Hosted every few days can include **scary** and **spooky** movie nights, where we watch a horror film. Or we could be having a huge competition to see who becomes the next **h a n g o u t Champion** in Game Night!'
+      },
+      {
+        name: 'Join our Community today!',
+        value: '[**Server**](https://discord.gg/pppNK2G) | [**Website**](http://thehangout.tk) | [**Nexus**](https://discord.gg/gu6XGfp)',
+      }
+    ],
+    footer: {
+      icon_url: client.guilds.get('294643442066128897').iconURL,
+      text: 'Join h a n g o u t today!'
+    }
+  }
+  });
+} else
+
+  if (command === 'shutdown') {
+      message.channel.send('Shutting down...')
+      client.destroy()
+  } else return;
 });
 /*
 client.on('message', message => {
@@ -285,7 +383,7 @@ client.on('message', message => {
 });
 
 // END OF MESSAGES --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+/*
 // Leaving a Guild
 client.on('guildDelete', guild => {
     console.log(`I have left ${guild.name} at ${new Date()}`);
@@ -377,6 +475,20 @@ client.on("guildMemberAdd", member => {
   }});
 });
 
+client.on('roleCreate', role => {
+    let guild = role.guild
+    guild.defaultChannel.send(`A new role called ${role.name} has been created!`);
+});
+
+client.on('roleDelete', role => {
+    let guild = role.guild
+    guild.defaultChannel.send(`A role called ${role.name} has been deleted!`);
+});
+
+client.on('roleUpdate', (oRole, nRole) => {
+    console.log(ddiff(oRole, nRole));
+});
+*/
 /* Disabled Logs --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 - Typing Start
