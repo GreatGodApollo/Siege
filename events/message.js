@@ -1,4 +1,6 @@
+const moment = require('moment'); 
 const settings = require('../settings.json');
+require('moment-timezone'); 
 module.exports = message => {
   let client = message.client;
   if (message.author.bot) return;
