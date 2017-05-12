@@ -25,6 +25,6 @@ exports.conf = {
 
 exports.help = {
   name: 'time',
-  description: 'Displays the time for the given timezone. Level: None',
+  description: 'Displays the time for the given timezone. Level: Everyone',
   usage: 'time [timezone]'
 };

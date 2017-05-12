@@ -21,6 +21,6 @@ exports.conf = {
 
 exports.help = {
   name: 'flip',
-  description: 'Flips the mentioned user off. Level: None',
+  description: 'Flips the mentioned user off. Level: Everyone',
   usage: 'flip <username>'
 };

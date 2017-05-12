@@ -16,6 +16,6 @@ exports.conf = {
 };
 exports.help = {
   name: 'art',
-  description: 'Displays Ascii text art.',
+  description: 'Displays Ascii text art. Level: Everyone',
   usage: 'art [text]'
 };

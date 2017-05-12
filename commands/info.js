@@ -34,6 +34,6 @@ exports.conf = {
 
 exports.help = {
   name: 'info',
-  description: `Displays the bot info`,
+  description: `Displays the bot info. Level: Everyone`,
   usage: 'info'
 };

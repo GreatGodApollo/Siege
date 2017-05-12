@@ -26,6 +26,6 @@ exports.conf = {
 
 exports.help = {
   name: 'test',
-  description: 'A cool test command to see if the bot is functioning. Level: None',
+  description: 'A cool test command to see if the bot is functioning. Level: Everyone',
   usage: 'test'
 };

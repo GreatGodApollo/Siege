@@ -13,6 +13,6 @@ exports.conf = {
 
 exports.help = {
   name: 'say',
-  description: 'Makes the bot say what you say. Level: None',
+  description: 'Makes the bot say what you say. Level: Everyone',
   usage: 'say [what he should say]'
 };

@@ -20,6 +20,6 @@ message.channel.send({
 
   exports.help = {
     name: 'mc',
-    description: 'Finds the amound of members in the server.',
+    description: 'Finds the amound of members in the server. Level: Everyone',
     usage: 'mc'
   };

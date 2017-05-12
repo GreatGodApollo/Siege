@@ -31,6 +31,6 @@ const querystring = require('querystring');
 
   exports.help = {
     name: 'google',
-    description: 'Displays a link from google.',
+    description: 'Displays a link from google. Level: Everyone',
     usage: 'google [search]'
   };

@@ -29,6 +29,6 @@ exports.conf = {
 
 exports.help = {
   name: 'roll',
-  description: 'Rolls a dice. Level: None',
+  description: 'Rolls a dice. Level: Everyone',
   usage: 'roll [sides]'
 };

@@ -15,6 +15,6 @@ exports.conf = {
 
 exports.help = {
   name: 'invite',
-  description: 'Creates a invite command',
+  description: 'Sends an invite to the testing server. Level: Everyone',
   usage: 'invite'
 };
