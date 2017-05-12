@@ -17,6 +17,6 @@ exports.conf = {
 
 exports.help = {
   name: 'purge',
-  description: 'Deletes a selected amount of messages from the given channel.',
+  description: 'Deletes a given amount of messages from the given channel. Level: Mod',
   usage: 'purge <number>'
 };

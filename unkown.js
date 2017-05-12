@@ -1,4 +1,4 @@
-
+// THIS IS JUST USED TO PUT COMMANDS IN, I'M SLOWLY GOING THROUGH ALL OF THEM
 
 client.on('message', message => {
     if (!message.content.startsWith(prefix)) return;
@@ -30,55 +30,6 @@ client.on('message', message => {
         } else
         message.channel.send(`Status has been set to ${argresult}!`).catch(console.error);
     } else
-
-    if (command === 'send') {
-        client.channels.get('308720869545476100').send('hello from another dimension XD!');
-    } else 
-
-    if (command === 'lol') {
-        message.channel.send('why are we here? Just to suffer?');
-    } else
-    
-    if (command === 'setgame') {
-        if (!argresult) {
-            message.channel.send('Please say the game you want me to display. Ex: ``/setgame /help | NewGen``').catch(console.error);
-            return;
-        } else
-        
-        if (argresult === 'end') {
-            client.user.setGame().catch(console.error);
-            message.channel.send(`Game has been reset!`).catch(console.error);
-            return;
-        } else
-        client.user.setGame(argresult)
-        message.channel.send(`Game has been set to ${argresult}!`);
-    } else
-
-    if (command === 'join') {
-		let voiceChan = message.member.voiceChannel;
-		if (!voiceChan || voiceChan.type !== 'voice') {
-			message.channel.send('No').catch(error => console.log(error))
-		} else if (guild.voiceConnection) {
-			message.channel.send('I\'m already in a voice channel');
-		} else {
-			message.channel.send('Joining...').then(() => {
-				voiceChan.join().then(() => {
-					message.channel.send('Joined successfully.').catch(error => console.log(error));
-				}).catch(error => console.log(error));
-			}).catch(error => console.log(error))
-		}
-	} else
-
-	if (command === 'leave') {
-		let voiceChan = message.member.voiceChannel;
-		if (!voiceChan) {
-			message.channel.send('I am not in a voice channel');
-		} else {
-			message.channel.send('Leaving...').then(() => {
-				voiceChan.leave();
-			}).catch(error => console.log(error))
-		}
-	} else
 
     if (command === 'roll') {
     var roll = Math.floor(Math.random() * argresult) + 1;

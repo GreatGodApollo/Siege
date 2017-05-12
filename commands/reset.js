@@ -1,4 +1,3 @@
-const settings = require('../settings.json');
 exports.run = (client, message, params) => {
     client.user.setGame().catch(console.error);
     message.reply('Successfully resetted!')
@@ -8,12 +7,12 @@ exports.run = (client, message, params) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['w'],
+  aliases: [],
   permLevel: 4
 };
 
 exports.help = {
   name: 'reset',
-  description: 'Reset\'s the bot\'s game and status.',
+  description: 'Reset\'s the bot\'s game and status. Level: Owner',
   usage: 'reset'
 };

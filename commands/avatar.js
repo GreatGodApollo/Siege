@@ -40,6 +40,6 @@ exports.conf = {
 
 exports.help = {
   name: 'avatar',
-  description: 'Gives avatar for mentioned user.',
+  description: 'Gives avatar for mentioned user. Level: None',
   usage: 'avatar <user>'
 };

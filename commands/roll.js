@@ -1,34 +1,34 @@
 const settings = require('../settings.json');
 exports.run = (client, message, params) => {
-    client.channels.get('311670113344684034').send('', {embed: {
+  let presult = params.join(' ');
+  var roll = Math.floor(Math.random() * presult) + 1;
+    message.channel.send('', {embed: {
     color: 15844367,
     author: {
       name: client.user.username,
       icon_url: client.user.avatarURL
     },
-    title: 'Announcement',
+    title: 'Roll',
     url: 'http://thehangout.tk',
-    description: `${params}`,
+    description: `you rolled a ${roll}!`,
     timestamp: new Date(),
     footer: {
       icon_url: client.user.avatarURL,
-      text: 'Announcement Command'
+      text: 'Roll Command'
     }
   }
-    })
-    .then
-    client.channels.get('311670113344684034').send(`${message.author}`)
+    });
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: [],
-  permLevel: 2
+  permLevel: 0
 };
 
 exports.help = {
-  name: 'announce',
-  description: `Used for doing announcements. Level: Mod`,
-  usage: 'announce <announcement>'
+  name: 'roll',
+  description: 'Rolls a dice. Level: None',
+  usage: 'roll [sides]'
 };

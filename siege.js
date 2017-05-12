@@ -19,7 +19,7 @@ fs.readdir('./commands/', (err, files) => {
   log(`Loading a total of ${files.length} commands.`);
   files.forEach(f => {
     let props = require(`./commands/${f}`);
-    log(`Loading Command: ${props.help.name}. 👌`);
+    log(`Loading Command: ${props.help.name}...Complete`);
     client.commands.set(props.help.name, props);
     props.conf.aliases.forEach(alias => {
       client.aliases.set(alias, props.help.name);
@@ -51,6 +51,8 @@ client.elevation = message => {
   /* This function should resolve to an ELEVATION level which
      is then sent to the command handler for verification*/
   let permlvl = 0;
+  let vip_role = message.guild.roles.find('name', settings.viprolename);
+  if (vip_role && message.member.roles.has(vip_role.id)) permlvl = 1;
   let mod_role = message.guild.roles.find('name', settings.modrolename);
   if (mod_role && message.member.roles.has(mod_role.id)) permlvl = 2;
   let admin_role = message.guild.roles.find('name', settings.adminrolename);

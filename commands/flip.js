@@ -4,7 +4,10 @@ exports.run = (client, message, params) => {
     let mentioned = guild.member(message.mentions.users.first());
     let content = message.content.slice(settings.prefix.length + 'flip'.length);
     if (!mentioned) return message.channel.send('Please mention a user you want to flip at.');
-
+    if (mentioned.user === client.user) {
+    message.channel.send(`:middle_finger: ${message.author}`);
+    return;
+    } else
     message.delete(0);
     message.channel.send(':middle_finger:' + content);
 };
@@ -18,6 +21,6 @@ exports.conf = {
 
 exports.help = {
   name: 'flip',
-  description: 'Flips the mentioned user off.',
+  description: 'Flips the mentioned user off. Level: None',
   usage: 'flip <username>'
 };

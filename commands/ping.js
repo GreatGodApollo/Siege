@@ -14,6 +14,6 @@ exports.conf = {
 
 exports.help = {
   name: 'ping',
-  description: 'Emmits a pong command which displays your Latency.',
+  description: 'Emmits a pong command which displays your Latency. Level: None',
   usage: 'ping'
 };
