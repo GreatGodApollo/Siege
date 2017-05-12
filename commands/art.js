@@ -1,16 +1,16 @@
 const figlet = require('figlet');
 
-exports.run = (bot, message, args) => {
+exports.run = (bot, msg, args) => {
     if (args.length < 1) {
-         message.channel.send("Please put some text after the command"); return // This makes sure there is text in the command
+         msg.channel.send("Please put some text after the command"); return // This makes sure there is text in the command
     }
 
 
 
     figlet.text(args.join(' '), (err, res) => {
         if (err)
-            return message.error(err);
-        message.channel.send({embed: {description: `\`\`\`${res}\`\`\``, color: 14814143}});
+            return msg.error(err);
+        msg.channel.send({embed: {description: `\`\`\`${res}\`\`\``, color: 14814143}});
     }); // This is what makes the art NOTE: You need figlet
 
 };
