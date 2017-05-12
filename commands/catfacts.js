@@ -8,14 +8,12 @@ exports.run = async (client, msg) => {
     client.funcs.log(e, "error");
   }
 };
-
 exports.conf = {
   enabled: true,
   runIn: ["text", "dm", "group"],
   aliases: ['kittenfact'],
   permLevel: 0
 };
-
 exports.help = {
   name: 'catfact',
   description: 'Tells you a cat fact. Level: None',
