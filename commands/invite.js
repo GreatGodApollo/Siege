@@ -1,9 +1,11 @@
 
 const Discord = require("discord.js")
 exports.run = (bot, msg, args) => {
+  let guild = msg.guild
+  let invite = guild.invite
+  let invites = guild.fetchInvite(invite.guild)
 
-
-    msg.channel.send(`Here is an invite ==> https://discord.gg/zZypw3s`)
+    msg.channel.send(`Here is an invite ==> ${invites}`)
 };
 
 exports.conf = {
