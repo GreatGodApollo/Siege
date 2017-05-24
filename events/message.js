@@ -1,5 +1,6 @@
 const moment = require('moment'); 
 const settings = require('../settings.json');
+const eightball = require('8ball')()
 require('moment-timezone'); 
 module.exports = message => {
   let client = message.client;
