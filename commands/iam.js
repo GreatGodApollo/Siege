@@ -37,6 +37,6 @@ exports.conf = {
 
 exports.help = {
   name: 'iam',
-  description: `Gives yourself a role. Level: Everyone`,
+  description: `Gives yourself a role. Level: Broken`,
   usage: 'iam [role name]'
 };
