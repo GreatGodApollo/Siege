@@ -11,6 +11,6 @@ exports.conf = {
 
 exports.help = {
   name: 'coinflip',
-  description: 'Flip a coin. Level: Everyone',
+  description: `Flip a coin. Level: ${exports.conf.permLevel}`,
   usage: 'coinflip'
 };

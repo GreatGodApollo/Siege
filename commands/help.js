@@ -25,6 +25,6 @@ exports.conf = {
 
 exports.help = {
   name: 'help',
-  description: 'Displays all the available commands for your permission level. Level: Everyone',
+  description: `Displays all the available commands for your permission level. Level: ${exports.conf.permLevel}`,
   usage: 'help [command]'
 };

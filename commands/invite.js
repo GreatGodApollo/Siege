@@ -17,6 +17,6 @@ exports.conf = {
 
 exports.help = {
   name: 'invite',
-  description: 'Sends an invite to the testing server. Level: Everyone',
+  description: `Sends an invite to the testing server. Level: ${exports.conf.permLevel}`,
   usage: 'invite'
 };

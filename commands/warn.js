@@ -14,6 +14,6 @@ exports.conf = {
 
 exports.help = {
   name: 'warn',
-  description: 'Issues a warning to the mentioned user. Level: Mod',
+  description: `Issues a warning to the mentioned user. Level: ${exports.conf.permLevel}`,
   usage: 'warn [mention]'
 };

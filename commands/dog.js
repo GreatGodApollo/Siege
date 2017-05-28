@@ -27,6 +27,6 @@ exports.conf = {
 
 exports.help = {
   name: 'dog',
-  description: 'Display a dog. Level: Everyone',
+  description: `Display a dog. Level: ${exports.conf.permLevel}`,
   usage: 'dog'
 };

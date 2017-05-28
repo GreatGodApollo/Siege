@@ -28,6 +28,6 @@ exports.conf = {
 
 exports.help = {
   name: '8ball',
-  description: `Shakes the eight ball and gives answer.`,
+  description: `Shakes the eight ball and gives answer. Level: ${exports.conf.permLevel}`,
   usage: '8ball <question>'
 };

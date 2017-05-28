@@ -49,7 +49,7 @@ message.channel.send({ embed: {
 
   exports.help = {
     name: 'membercount',
-    description: 'Finds the amound of members in the server. Level: Everyone',
+    description: `Finds the amound of members in the server. Level: ${exports.conf.permLevel}`,
     usage: 'membercount'
   };
 

@@ -13,6 +13,6 @@ exports.conf = {
 
 exports.help = {
   name: 'reset',
-  description: 'Reset\'s the bot\'s game and status. Level: Owner',
+  description: `Reset\'s the bot\'s game and status. Level: ${exports.conf.permLevel}`,
   usage: 'reset'
 };

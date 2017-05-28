@@ -31,6 +31,6 @@ const querystring = require('querystring');
 
   exports.help = {
     name: 'google',
-    description: 'Displays a link from google. Level: Everyone',
+    description: `Displays a link from google. Level: ${exports.conf.permLevel}`,
     usage: 'google [search]'
   };

@@ -15,6 +15,6 @@ exports.conf = {
 
 exports.help = {
   name: 'mute',
-  description: 'Assigns the Muted role to the mentioned user. Level: Mod', 
+  description: `Assigns the Muted role to the mentioned user. Level: ${exports.conf.permLevel}`, 
   usage: 'mute <user>'
 };

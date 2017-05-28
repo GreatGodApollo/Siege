@@ -5,6 +5,7 @@ exports.run = (client, message, params) => {
       message.channel.send('That team does not exist! Please join a valid team, which is listed with ``s/teams``').catch(console.error);
   }
   if (params[0] === 'Force') {
+    message.author.addRole('318253976279711752')
     message.channel.send('', {embed: {
     color: 15158332,
     author: {
@@ -55,6 +56,6 @@ exports.conf = {
 };
 exports.help = {
   name: 'team',
-  description: 'Allows you to join a team. Level: Everyone',
+  description: `Allows you to join a team. Level: ${exports.conf.permLevel}`,
   usage: 'team <teamname>'
 };

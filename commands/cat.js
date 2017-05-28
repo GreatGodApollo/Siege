@@ -15,6 +15,6 @@ exports.conf = {
 
 exports.help = {
   name: 'cat',
-  description: 'Find your cat. Level: Everyone',
+  description: `Find your cat. Level: ${exports.conf.permLevel}`,
   usage: 'cat'
 };

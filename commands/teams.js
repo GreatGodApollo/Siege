@@ -33,6 +33,6 @@ exports.conf = {
 };
 exports.help = {
   name: 'teams',
-  description: 'Lists all the current valid teams. Level: Everyone',
+  description: `Lists all the current valid teams. Level: ${exports.conf.permLevel}`,
   usage: 'teams'
 };

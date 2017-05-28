@@ -2,12 +2,10 @@ const settings = require('../settings.json');
 exports.run = (client, message, params) => {
     let user = message.mentions.users.first();
 
-    if (message.mentions.size === 0) {
-        message.channel.send('Please mention a user to have their avatar displayed.');
-    } else
+    if (params.length < 1) user = message.author;
 
     message.channel.send('', {embed: {
-    color: 15844367,
+    color: 15158332,
     author: {
       name: client.user.username,
       icon_url: client.user.avatarURL
@@ -40,6 +38,6 @@ exports.conf = {
 
 exports.help = {
   name: 'avatar',
-  description: 'Gives avatar for mentioned user. Level: Everyone',
+  description: `Gives avatar for mentioned user. Level: ${exports.conf.permLevel}`,
   usage: 'avatar <user>'
 };

@@ -16,6 +16,6 @@ exports.conf = {
 };
 exports.help = {
   name: 'catfact',
-  description: 'Tells you a cat fact. Level: Everyone',
-  usage: ''
+  description: `Tells you a cat fact. Level: ${exports.conf.permLevel}`,
+  usage: 'catfact'
 };

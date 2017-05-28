@@ -15,6 +15,6 @@ exports.conf = {
 
 exports.help = {
   name: 'unmute',
-  description: 'Retracts the Muted role from the mentioned user. Level: Mod',
+  description: `Retracts the Muted role from the mentioned user. Level: ${exports.conf.permLevel}`,
   usage: 'unmute <user>'
 };

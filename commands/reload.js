@@ -30,6 +30,6 @@ exports.conf = {
 
 exports.help = {
   name: 'reload',
-  description: 'Reloads the command file, if it\'s been updated or modified. Level: Owner',
+  description: `Reloads the command file, if it\'s been updated or modified. Level: ${exports.conf.permLevel}`,
   usage: 'reload <commandname>'
 };

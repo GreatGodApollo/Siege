@@ -29,6 +29,6 @@ exports.conf = {
 
 exports.help = {
   name: 'roll',
-  description: 'Rolls a dice. Level: Everyone',
+  description: `Rolls a dice. Level: ${exports.conf.permLevel}`,
   usage: 'roll [sides]'
 };

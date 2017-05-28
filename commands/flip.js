@@ -21,6 +21,6 @@ exports.conf = {
 
 exports.help = {
   name: 'flip',
-  description: 'Flips the mentioned user off. Level: Everyone',
+  description: `Flips the mentioned user off. Level: ${exports.conf.permLevel}`,
   usage: 'flip <username>'
 };

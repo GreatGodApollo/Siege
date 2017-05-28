@@ -65,6 +65,6 @@ exports.conf = {
 
 exports.help = {
   name: 'serverinfo',
-  description: 'Gives info about the server. Level: Everyone',
+  description: `Gives info about the server. Level: ${exports.conf.permLevel}`,
   usage: 'serverinfo'
 };

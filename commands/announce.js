@@ -29,6 +29,6 @@ exports.conf = {
 
 exports.help = {
   name: 'announce',
-  description: `Used for doing announcements. Level: Mod`,
+  description: `Used for doing announcements. Level: ${exports.conf.permLevel}`,
   usage: 'announce <announcement>'
 };

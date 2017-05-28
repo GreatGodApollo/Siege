@@ -23,6 +23,6 @@ exports.conf = {
 
 exports.help = {
   name: 'setgame',
-  description: 'Sets the game for the bot. Level: Owner',
+  description: `Sets the game for the bot. Level: ${exports.conf.permLevel}`,
   usage: 'setgame [game]'
 };
