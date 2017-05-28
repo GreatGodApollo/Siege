@@ -1,10 +1,39 @@
 exports.run = (client, message, args) => {
-message.channel.send({
-  embed: {
-    title: `This server has ${message.guild.memberCount} Members`,
-    description: `Online Members ${message.guild.members.filter(m=>m.user.presence.status === "online").size}`,
+  let amount = message.guild.memberCount
+  let offline = message.guild.members.filter(m=>m.user.presence.status === "online").size + message.guild.members.filter(m=>m.user.presence.status === "idle").size + message.guild.members.filter(m=>m.user.presence.status === "dnd").size - amount;
+
+message.channel.send({ embed: {
+    title: `MemberCount Command`,
+    url: 'http://thehangout.tk',
+    description: `${message.guild.name} has ${amount} Members!`,
+    color: 15158332,
+    fields: [{
+        name: 'Online Members',
+        value: `${message.guild.members.filter(m=>m.user.presence.status === 'online').size}/${amount}`,
+        inline: true
+      },
+      {
+        name: 'Idle Members',
+        value: `${message.guild.members.filter(m=>m.user.presence.status === 'idle').size}/${amount}`,
+        inline: true
+      },
+      {
+        name: 'DnD Members',
+        value: `${message.guild.members.filter(m=>m.user.presence.status === 'dnd').size}/${amount}`,
+        inline: true
+      },
+      {
+        name: 'Offline Members',
+        value: `${offline.size}`,
+        inline: true
+      }
+    ],
     thumbnail: { url: message.guild.iconURL },
-    color: 14814143
+  timestamp: new Date(),
+  footer: {
+      icon_url: client.user.avatarURL,
+      text: 'MemberCount Command'
+    }
   }
 })
 
@@ -14,12 +43,12 @@ message.channel.send({
   exports.conf = {
     enabled: true,
     guildOnly: true,
-    aliases: [],
+    aliases: ['mc'],
     permLevel: 0
   };
 
   exports.help = {
-    name: 'mc',
+    name: 'membercount',
     description: 'Finds the amound of members in the server. Level: Everyone',
-    usage: 'mc'
+    usage: 'membercount'
   };

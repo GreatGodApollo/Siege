@@ -10,7 +10,7 @@ exports.run = (client, message, params) => {
     let command = params[0];
     if (client.commands.has(command)) {
       command = client.commands.get(command);
-      message.channel.sendCode('diff', `!${command.help.name}! \n${command.help.description}\nusage | ${command.help.usage}`);
+      message.channel.sendCode('diff', `!${command.help.name}! \n${command.help.description}\nUsage: ${command.help.usage}`);
     }
   }
 };
