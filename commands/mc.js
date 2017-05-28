@@ -24,7 +24,7 @@ message.channel.send({ embed: {
       },
       {
         name: 'Offline Members',
-        value: `${amount - message.guild.members.filter(m=>m.user.presence.status === 'online').size - message.guild.members.filter(m=>m.user.presence.status === 'idle').size - message.guild.members.filter(m=>m.user.presence.status === 'dnd').size}`,
+        value: `${amount - message.guild.members.filter(m=>m.user.presence.status === 'online').size - message.guild.members.filter(m=>m.user.presence.status === 'idle').size - message.guild.members.filter(m=>m.user.presence.status === 'dnd').size}/${amount}`,
         inline: true
       }
     ],
