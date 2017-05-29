@@ -5,7 +5,6 @@ const ddiff = require('return-deep-diff');
 const moment = require('moment'); 
 
 // We dont need 8ball, i can make an 8ball command without an npm package ~Olykir
-const eightball = require('8ball')()
 const fs = require('fs');
 require('moment-timezone'); 
 require('./util/eventLoader')(client);
